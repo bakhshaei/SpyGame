@@ -9,10 +9,16 @@ import SwiftUI
 
 @main
 struct SpyGameApp: App {
+    private let navigationModel: NavigationModel = .init()
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(NavigationModel())
+            switch navigationModel.currentRoute {
+            case .newGame:
+                ContentView()
+            case .gameScreen(let gameScreen):
+                GameMainScreen(gameManager: gameScreen)
+            }
         }
+        .environment(navigationModel)
     }
 }

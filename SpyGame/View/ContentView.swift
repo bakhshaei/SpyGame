@@ -9,14 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @State var totalParticipantCounts: Int = 4
-    @State var spyCounts: Int = 1
+    @State var spyCounts: Int = 0
     @State var category: ItemCategory = .allCategories
     
     @State var errorsInterpreter: (occured: Bool, value: Error?) = (false, nil)
     
-
+    @Environment(NavigationModel.self) private var navigationModel
+    
     //MARK: Views
     var body: some View {
+        @Bindable var navigationModel = navigationModel
+
         VStack {
             Form {
                 /// Participants Picker
@@ -57,6 +60,7 @@ struct ContentView: View {
         .alert("Error", isPresented: $errorsInterpreter.occured) { /*actions*/ } message: {
             Text(errorsInterpreter.value?.localizedDescription ?? String(localized: "Unkown Error"))
         }
+        .environment(navigationModel)
 
     }
     
@@ -68,6 +72,8 @@ struct ContentView: View {
                 numberOfSpies: spyCounts + 1,
                 fromCategory: category
             )
+            
+            navigationModel.currentRoute = .gameScreen(newGame)
             
         }
         catch {
