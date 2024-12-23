@@ -15,10 +15,10 @@ class SpyGameManager {
     //var itemList : Array<ItemModel> = []
     
     /// Selected Item for the specific round of game.
-    private var selectedItem : ItemModel
+    private(set) var selectedItem : ItemModel
     
     /// Total number of people participated in a game. (this also includes number of spies)
-    private var numberOfParticipants : Int = 0
+    private(set) var numberOfParticipants : Int = 0
     
     /// Nubmer of Spies participated in a game.
     private var numberOfSpies : Int = 0
@@ -79,8 +79,6 @@ class SpyGameManager {
 }
 
 
-enum SpyGameError: Error {
-    case numberOfSpiesShouleBeLessThanNumberOfPeople
-    case gameShouldHaveAtLeastOneSpy
-    case invalidIndexForParticipant
+extension SpyGameManager {
+    static let preview : SpyGameManager = try! SpyGameManager(numberOfParticipants: 3, numberOfSpies: 1)
 }

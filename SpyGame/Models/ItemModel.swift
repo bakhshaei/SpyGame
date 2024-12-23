@@ -6,7 +6,7 @@
 //
 
 
-struct ItemModel: Codable {
+struct ItemModel {
     let category: ItemCategory
     let name: String
 }

@@ -11,11 +11,11 @@ import Foundation
 class SpyItemRepository {
     func fetchItems(for category: ItemCategory) -> [ItemModel] {
         var items : Array<ItemModel> = [
-            .init(category: .utility, name: "Spyglass"),
-            .init(category: .utility, name: "Microphone"),
-            .init(category: .utility, name: "Radio"),
-            .init(category: .utility, name: "Map"),
-            .init(category: .city, name: "Los Angeles")
+            .init(category: .utility, name: String(localized: "Spyglass") ),
+            .init(category: .utility, name: String(localized: "Microphone") ),
+            .init(category: .utility, name: String(localized: "Radio") ),
+            .init(category: .utility, name: String(localized: "Map") ),
+            .init(category: .city, name: String(localized: "Los Angeles") )
         ]
         if category != .allCategories {
             

@@ -1,0 +1,107 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    " %lld person" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : " %lld person"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : " %lld people"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "All Categories" : {
+
+    },
+    "Are you (as the participant no %lld) ready to see?" : {
+
+    },
+    "Category" : {
+
+    },
+    "City" : {
+
+    },
+    "Error" : {
+
+    },
+    "Game should have at least one spy" : {
+
+    },
+    "Invalid index for participant" : {
+
+    },
+    "It's recommended not to increase number of spies." : {
+
+    },
+    "Los Angeles" : {
+
+    },
+    "Map" : {
+
+    },
+    "Microphone" : {
+
+    },
+    "Next Participant" : {
+
+    },
+    "Number of spies should be less than number of people" : {
+
+    },
+    "Number of Spies:" : {
+
+    },
+    "Participant no %lld." : {
+
+    },
+    "Perticipants: %lld | Spies: %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Perticipants: %1$lld | Spies: %2$lld"
+          }
+        }
+      }
+    },
+    "Previous Participant" : {
+
+    },
+    "Radio" : {
+
+    },
+    "Spy" : {
+
+    },
+    "Spyglass" : {
+
+    },
+    "Start" : {
+
+    },
+    "Total Participants" : {
+
+    },
+    "Unkown Error" : {
+
+    },
+    "Utility" : {
+
+    }
+  },
+  "version" : "1.0"
+}
