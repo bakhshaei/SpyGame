@@ -20,8 +20,8 @@ struct ContentView: View {
     var body: some View {
         @Bindable var navigationModel = navigationModel
 
-        VStack {
-            Form {
+        Form {
+            Section(header: Text("Choose details for the new game:")) {
                 /// Participants Picker
                 Picker("Total Participants", selection: $totalParticipantCounts) {
                     ForEach(1..<21) { i in
@@ -45,18 +45,19 @@ struct ContentView: View {
                         Text(category.localizedDescription)
                     }
                 }
-                
-                Text("Perticipants: \(totalParticipantCounts + 1) | Spies: \(spyCounts + 1)")
-                    .font(.caption)
             }
-            .padding(.bottom, 60)
-            .padding(.top, 15)
             
-            Button("Start") {
+            Button {
                 generateGame()
+            } label: {
+                //#if os(macOS)
+                Text("Start")
+                    .frame(width: 150, alignment: .center)
+                //#endif
             }
+
+            
         }
-        .padding()
         .alert("Error", isPresented: $errorsInterpreter.occured) { /*actions*/ } message: {
             Text(errorsInterpreter.value?.localizedDescription ?? String(localized: "Unkown Error"))
         }
@@ -84,6 +85,7 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environment(NavigationModel())
 }
 
 
