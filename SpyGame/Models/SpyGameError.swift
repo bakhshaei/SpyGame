@@ -18,7 +18,7 @@ extension SpyGameError {
     var errorDescription: String? {
         switch self {
         case .numberOfSpiesShouleBeLessThanNumberOfPeople:
-            return String(localized:"Number of spies should be less than number of people")
+            return String(localized:"Number of spies should be less than number of participants")
         case .gameShouldHaveAtLeastOneSpy:
             return String(localized: "Game should have at least one spy")
         case .invalidIndexForParticipant:

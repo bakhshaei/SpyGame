@@ -78,7 +78,7 @@ struct GameMainScreen: View {
                 showNewGameAlert = false
             }
         } message: {
-            Text("Are you sure to start a new game.")
+            Text("Are you sure to start a new game?")
         }
 
         //.alert("New Game", isPresented: $showNewGameAlert, presenting: nil) { _ in }
@@ -110,7 +110,7 @@ struct GameMainScreen: View {
     
     @ViewBuilder
     func getConfirmationViewForThisParticipant() -> some View {
-        Button("Are you (as the participant no \(self.currentParticipantIndex + 1)) ready to see?") {
+        Button("Are you (as the participant no \(self.currentParticipantIndex + 1)) ready to see your card?") {
             self.isParticipantConfirmToView = true
         }
     }
